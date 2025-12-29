@@ -33,7 +33,7 @@ export class BeadBag {
             const bead = this.beads[i];
             const bx = x + 12 + (i % 8) * 18;
             const by = y + 16 + Math.floor(i / 8) * 18;
-            ctx.fillStyle = bead?.color ?? "#3a6ea5";
+            ctx.fillStyle = bead?.color ?? BeadBag.DEFAULT_COLOR;
             ctx.beginPath();
             ctx.arc(bx, by, 7, 0, Math.PI * 2);
             ctx.fill();
@@ -78,4 +78,5 @@ export class BeadBag {
         ctx.closePath();
     }
 }
+BeadBag.DEFAULT_COLOR = "#3a6ea5";
 //# sourceMappingURL=beadBag.js.map

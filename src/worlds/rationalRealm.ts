@@ -2,6 +2,8 @@ import { FractionBar } from "../components/fractionBar.js";
 import { NumberLine } from "../components/numberLine.js";
 import { Level, LevelContext } from "../core/types.js";
 
+const IRRATIONAL_GAP_COLOR = "rgba(255,209,102,0.35)";
+
 export class RationalRealm implements Level {
   id = "rational-irrational";
   title = "Rational Realm: Finite vs Endless";
@@ -86,7 +88,7 @@ export class RationalRealm implements Level {
         min: 0,
         max: 4,
         marks,
-        highlight: { start: Math.SQRT2, end: Math.PI, color: "rgba(255,209,102,0.35)", label: "Irrational gap" },
+        highlight: { start: Math.SQRT2, end: Math.PI, color: IRRATIONAL_GAP_COLOR, label: "Irrational gap" },
       });
     }
 

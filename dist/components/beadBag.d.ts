@@ -3,6 +3,7 @@ export interface Bead {
     label: string;
 }
 export declare class BeadBag {
+    private static readonly DEFAULT_COLOR;
     private beads;
     private history;
     constructor(beads: Bead[]);

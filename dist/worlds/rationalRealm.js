@@ -1,5 +1,6 @@
 import { FractionBar } from "../components/fractionBar.js";
 import { NumberLine } from "../components/numberLine.js";
+const IRRATIONAL_GAP_COLOR = "rgba(255,209,102,0.35)";
 export class RationalRealm {
     constructor() {
         this.id = "rational-irrational";
@@ -70,7 +71,7 @@ export class RationalRealm {
                 min: 0,
                 max: 4,
                 marks,
-                highlight: { start: Math.SQRT2, end: Math.PI, color: "rgba(255,209,102,0.35)", label: "Irrational gap" },
+                highlight: { start: Math.SQRT2, end: Math.PI, color: IRRATIONAL_GAP_COLOR, label: "Irrational gap" },
             });
         }
         ctx.fillStyle = "#1e2a3a";

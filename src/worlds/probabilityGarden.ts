@@ -9,6 +9,8 @@ const SPINNER_SLICES: SpinnerSlice[] = [
   { label: "Sun", weight: 1, color: "#ffd166" },
 ];
 
+type ColorLabel = "Blue" | "Coral" | "Sun";
+
 export class ProbabilityGarden implements Level {
   id = "probability-garden";
   title = "Chance Meadow: Experimental Probability";
@@ -24,7 +26,7 @@ export class ProbabilityGarden implements Level {
   ]);
   private spinner = new ProbabilitySpinner(SPINNER_SLICES);
   private dice = new Dice();
-  private counts: Record<string, number> = { Blue: 0, Coral: 0, Sun: 0 };
+  private counts: Record<ColorLabel, number> = { Blue: 0, Coral: 0, Sun: 0 };
   private trials = 0;
   private diceValue = 1;
   private complete = false;
@@ -90,7 +92,8 @@ export class ProbabilityGarden implements Level {
   private draw(count: number) {
     const drawn = this.bag.draw(count, this.ctx.random);
     drawn.forEach((bead) => {
-      this.counts[bead.label] = (this.counts[bead.label] ?? 0) + 1;
+      const label = bead.label as ColorLabel;
+      this.counts[label] = this.counts[label] + 1;
       this.trials += 1;
     });
     this.ctx.ui.setFeedback(

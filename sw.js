@@ -45,8 +45,9 @@ self.addEventListener("fetch", (event) => {
           caches
             .open(CACHE_NAME)
             .then((cache) => cache.put(event.request, clone))
-            .catch(() => {
+            .catch((err) => {
               // Ignore cache failures; stay responsive
+              console.warn("Cache error:", err);
             });
           return response;
         })

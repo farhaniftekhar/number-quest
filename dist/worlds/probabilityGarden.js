@@ -72,7 +72,8 @@ export class ProbabilityGarden {
     draw(count) {
         const drawn = this.bag.draw(count, this.ctx.random);
         drawn.forEach((bead) => {
-            this.counts[bead.label] = (this.counts[bead.label] ?? 0) + 1;
+            const label = bead.label;
+            this.counts[label] = this.counts[label] + 1;
             this.trials += 1;
         });
         this.ctx.ui.setFeedback(`You drew ${drawn.length} bead(s). More trials make the ratio settle near 6:3:1.`, "info");

@@ -76,19 +76,12 @@ export class RationalRealm implements Level {
       ? { start: Math.PI, end: Math.PI, color: "#f08c7d", label: "π ≈ 3.141..." }
       : undefined;
 
-    this.line.render(ctx, {
-      min: 0,
-      max: 4,
-      marks,
-      highlight: highlightSqrt ?? highlightPi,
-    });
-    if (highlightSqrt && highlightPi) {
-      this.line.render(ctx, {
-        min: 0,
-        max: 4,
-        marks,
-        highlight: highlightPi,
-      });
+    this.line.render(ctx, { min: 0, max: 4, marks });
+    if (highlightSqrt) {
+      this.line.render(ctx, { min: 0, max: 4, marks, highlight: highlightSqrt });
+    }
+    if (highlightPi) {
+      this.line.render(ctx, { min: 0, max: 4, marks, highlight: highlightPi });
     }
 
     if (highlightSqrt && highlightPi) {

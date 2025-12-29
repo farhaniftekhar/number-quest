@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Number Quest: The Rational Realm</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Number Quest: The Rational Realm</h1>
+      <p class="tagline">Explore numbers with beads, bars, spinners, and calm discovery.</p>
+    </header>
+    <main>
+      <section class="canvas-shell">
+        <canvas id="game-canvas" width="960" height="540" aria-label="Game canvas"></canvas>
+      </section>
+      <section class="control-shell">
+        <div class="world-info">
+          <h2 id="world-title">World</h2>
+          <p id="world-description">Loading...</p>
+        </div>
+        <div class="level-info">
+          <h3 id="level-title">Level</h3>
+          <p id="level-description"></p>
+        </div>
+        <div class="controls" id="controls"></div>
+        <div class="progress" id="progress"></div>
+        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+        <div class="nav">
+          <button id="prev-level">Previous</button>
+          <button id="next-level">Next</button>
+          <button id="reset-progress">Reset Progress</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./dist/main.js"></script>
+</body>
+</html>

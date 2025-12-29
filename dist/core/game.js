@@ -80,7 +80,8 @@ export class Game {
         if (!level)
             return;
         this.completeAnnounced = false;
-        level.onExit?.();
+        this.activeLevel?.onExit?.();
+        this.activeLevel = level;
         this.ui.setFeedback("Use the controls to explore. There are no penalties for trying!");
         this.progress.saveLastLevel(level.id);
         this.ui.setWorldInfo(this.currentWorld().title, this.currentWorld().description);

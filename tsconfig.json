@@ -37,6 +37,6 @@
     "skipLibCheck": true,
 
     "moduleResolution": "bundler",
-    "esModuleInterop": true,
+    "esModuleInterop": true
   }
 }

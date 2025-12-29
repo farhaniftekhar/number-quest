@@ -1,0 +1,1 @@
+{"version":3,"file":"dice.d.ts","sourceRoot":"","sources":["../../src/components/dice.ts"],"names":[],"mappings":"AAAA,qBAAa,IAAI;IACH,OAAO,CAAC,KAAK;gBAAL,KAAK,SAAI;IAE7B,IAAI,CAAC,MAAM,EAAE,MAAM,MAAM;IAIzB,MAAM,CAAC,GAAG,EAAE,wBAAwB,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM,EAAE,KAAK,EAAE,MAAM;IAevF,OAAO,CAAC,SAAS;CAqBlB"}

@@ -1,0 +1,21 @@
+{
+  "name": "number-quest",
+  "version": "1.0.0",
+  "description": "Number Quest: The Rational Realm - Montessori-inspired math exploration.",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "math",
+    "education",
+    "montessori",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

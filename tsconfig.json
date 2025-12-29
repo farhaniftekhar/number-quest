@@ -7,7 +7,7 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "Node16",
+    "module": "es2020",
     "target": "es2020",
     "lib": ["es2020", "dom"],
 
@@ -36,7 +36,7 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
 
-    "moduleResolution": "node16",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
   }
 }

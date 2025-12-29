@@ -100,7 +100,7 @@ export class FractionCompareLevel implements Level {
   }
 
   private scoopA() {
-    const drawn = this.bagA.draw(4);
+    const drawn = this.bagA.draw(4, this.ctx.random);
     this.drawsA += drawn.length;
     this.blueA += drawn.filter((b) => b.color === "#3a6ea5").length;
     this.ctx.ui.setFeedback(
@@ -109,7 +109,7 @@ export class FractionCompareLevel implements Level {
   }
 
   private scoopB() {
-    const drawn = this.bagB.draw(4);
+    const drawn = this.bagB.draw(4, this.ctx.random);
     this.drawsB += drawn.length;
     this.blueB += drawn.filter((b) => b.color === "#3a6ea5").length;
     this.ctx.ui.setFeedback(

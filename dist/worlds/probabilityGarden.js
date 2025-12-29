@@ -70,7 +70,7 @@ export class ProbabilityGarden {
         return this.complete;
     }
     draw(count) {
-        const drawn = this.bag.draw(count);
+        const drawn = this.bag.draw(count, this.ctx.random);
         drawn.forEach((bead) => {
             this.counts[bead.label] = (this.counts[bead.label] ?? 0) + 1;
             this.trials += 1;

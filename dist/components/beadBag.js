@@ -3,10 +3,10 @@ export class BeadBag {
         this.history = [];
         this.beads = [...beads];
     }
-    draw(count) {
+    draw(count, random = Math.random) {
         const drawn = [];
         for (let i = 0; i < count && this.beads.length > 0; i += 1) {
-            const index = Math.floor(Math.random() * this.beads.length);
+            const index = Math.floor(random() * this.beads.length);
             const [bead] = this.beads.splice(index, 1);
             drawn.push(bead);
             this.history.push(bead);

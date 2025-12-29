@@ -82,6 +82,14 @@ export class RationalRealm implements Level {
       marks,
       highlight: highlightSqrt ?? highlightPi,
     });
+    if (highlightSqrt && highlightPi) {
+      this.line.render(ctx, {
+        min: 0,
+        max: 4,
+        marks,
+        highlight: highlightPi,
+      });
+    }
 
     if (highlightSqrt && highlightPi) {
       this.line.render(ctx, {

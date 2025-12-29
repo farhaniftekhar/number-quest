@@ -12,7 +12,7 @@ function bootstrap() {
   const ui = new UIManager();
   const progress = new LocalProgress();
   const worlds = createWorlds();
-  const game = new Game(canvas, worlds, ui, progress);
+  const game = new Game(canvas, worlds, ui, progress, Math.random);
 
   const nextBtn = document.getElementById("next-level");
   const prevBtn = document.getElementById("prev-level");

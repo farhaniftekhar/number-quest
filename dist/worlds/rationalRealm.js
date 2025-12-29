@@ -71,6 +71,14 @@ export class RationalRealm {
                 min: 0,
                 max: 4,
                 marks,
+                highlight: highlightPi,
+            });
+        }
+        if (highlightSqrt && highlightPi) {
+            this.line.render(ctx, {
+                min: 0,
+                max: 4,
+                marks,
                 highlight: { start: Math.SQRT2, end: Math.PI, color: IRRATIONAL_GAP_COLOR, label: "Irrational gap" },
             });
         }

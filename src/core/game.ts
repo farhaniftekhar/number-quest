@@ -6,6 +6,7 @@ export class Game {
   private worlds: World[];
   private ui: LevelContext["ui"];
   private progress: ProgressStore;
+  private randomFn: () => number;
   private activeLevel?: Level;
   private lastTimestamp = 0;
   private completeAnnounced = false;
@@ -18,6 +19,7 @@ export class Game {
     worlds: World[],
     ui: LevelContext["ui"],
     progress?: ProgressStore,
+    randomFn: () => number = Math.random,
   ) {
     const context = canvas.getContext("2d");
     if (!context) {
@@ -27,6 +29,7 @@ export class Game {
     this.worlds = worlds;
     this.ui = ui;
     this.progress = progress ?? new LocalProgress();
+    this.randomFn = randomFn;
   }
 
   start() {
@@ -110,7 +113,7 @@ export class Game {
       ctx: this.ctx,
       ui: this.ui,
       progress: this.progress,
-      random: () => Math.random(),
+      random: this.randomFn,
     };
     level.onEnter(context);
     this.updateProgressText();

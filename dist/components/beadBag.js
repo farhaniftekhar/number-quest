@@ -31,6 +31,8 @@ export class BeadBag {
         const max = Math.min(this.beads.length, 40);
         for (let i = 0; i < max; i += 1) {
             const bead = this.beads[i];
+            if (!bead)
+                continue;
             const bx = x + 12 + (i % 8) * 18;
             const by = y + 16 + Math.floor(i / 8) * 18;
             ctx.fillStyle = bead?.color ?? BeadBag.DEFAULT_COLOR;

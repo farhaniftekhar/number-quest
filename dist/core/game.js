@@ -1,6 +1,6 @@
 import { LocalProgress } from "./persistence.js";
 export class Game {
-    constructor(canvas, worlds, ui, progress) {
+    constructor(canvas, worlds, ui, progress, randomFn = Math.random) {
         this.canvas = canvas;
         this.lastTimestamp = 0;
         this.completeAnnounced = false;
@@ -14,6 +14,7 @@ export class Game {
         this.worlds = worlds;
         this.ui = ui;
         this.progress = progress ?? new LocalProgress();
+        this.randomFn = randomFn;
     }
     start() {
         const saved = this.progress.load();
@@ -91,7 +92,7 @@ export class Game {
             ctx: this.ctx,
             ui: this.ui,
             progress: this.progress,
-            random: () => Math.random(),
+            random: this.randomFn,
         };
         level.onEnter(context);
         this.updateProgressText();

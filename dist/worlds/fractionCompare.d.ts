@@ -13,8 +13,10 @@ export declare class FractionCompareLevel implements Level {
     private ready;
     private complete;
     private ctx;
-    private barA;
-    private barB;
+    private barATarget;
+    private barAObserved;
+    private barBTarget;
+    private barBObserved;
     onEnter(context: LevelContext): void;
     update(): void;
     render(ctx: CanvasRenderingContext2D): void;

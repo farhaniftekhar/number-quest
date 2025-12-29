@@ -79,7 +79,7 @@ export class ProbabilityGarden {
     }
     spin() {
         const result = this.spinner.spin(this.ctx.random);
-        this.ctx.ui.setFeedback(`Spinner landed on ${result.label}. It also follows the 3:2:1 ratio.`);
+        this.ctx.ui.setFeedback(`Spinner landed on ${result.label}. It also follows the 6:3:1 ratio.`);
     }
     rollDice() {
         this.diceValue = this.dice.roll(this.ctx.random);

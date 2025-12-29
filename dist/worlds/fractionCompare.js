@@ -22,8 +22,10 @@ export class FractionCompareLevel {
         this.blueB = 0;
         this.ready = false;
         this.complete = false;
-        this.barA = new FractionBar(420, 140, 240, 36);
-        this.barB = new FractionBar(420, 220, 240, 36);
+        this.barATarget = new FractionBar(420, 140, 240, 36);
+        this.barAObserved = new FractionBar(420, 188, 240, 28);
+        this.barBTarget = new FractionBar(420, 250, 240, 36);
+        this.barBObserved = new FractionBar(420, 298, 240, 28);
     }
     onEnter(context) {
         this.ctx = context;
@@ -60,14 +62,14 @@ export class FractionCompareLevel {
         ctx.fillStyle = "#1e2a3a";
         ctx.font = "18px Nunito, sans-serif";
         ctx.fillText("Fraction A target: 3/4", 420, 120);
-        ctx.fillText("Fraction B target: 2/3", 420, 200);
-        this.barA.render(ctx, targetAFraction, "Target bar A");
-        this.barA.render(ctx, this.observedA(), "Observed A");
-        this.barB.render(ctx, targetBFraction, "Target bar B");
-        this.barB.render(ctx, this.observedB(), "Observed B");
+        ctx.fillText("Fraction B target: 2/3", 420, 230);
+        this.barATarget.render(ctx, targetAFraction, "Target bar A");
+        this.barAObserved.render(ctx, this.observedA(), "Observed A");
+        this.barBTarget.render(ctx, targetBFraction, "Target bar B");
+        this.barBObserved.render(ctx, this.observedB(), "Observed B");
         ctx.font = "16px Nunito, sans-serif";
-        ctx.fillText(`Draws: ${this.drawsA} | Blue: ${this.blueA}`, 420, 190);
-        ctx.fillText(`Draws: ${this.drawsB} | Blue: ${this.blueB}`, 420, 270);
+        ctx.fillText(`Draws: ${this.drawsA} | Blue: ${this.blueA}`, 420, 180);
+        ctx.fillText(`Draws: ${this.drawsB} | Blue: ${this.blueB}`, 420, 320);
         this.bagA.render(ctx, 60, 100, 280, 140);
         this.bagB.render(ctx, 60, 280, 280, 140);
         this.bagA.renderHistory(ctx, 60, 250, 280, 80);
